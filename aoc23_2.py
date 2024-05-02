@@ -1,8 +1,61 @@
 #12 red cubes , 13 green cubes , 14 blue cubes
 #which games are possible with these options?
 #a manha nesse eh dividir com o split
-arq = open("gameInput.txt")
 
+#agora converter o numero q sai em numeroCor[1] em int, e somar tipo azul = azul + numeroCor[1]
+arq = open("gameInput.txt")
+i = int(1)
+j = int(1)
+
+for linha in arq:                                                               # Cria uma lista em q cada linha do arq eh um indice
+    linhaSeparada = linha.split(':')
+    
+    azul = int(0)
+    verde = int(0)
+    vermemlho = int(0)
+    
+    jogos = linhaSeparada[1].split(';')                                         # Jogos eh uma lista, onde cada rodada separada por ; eh um elemento dela.
+    print("Jogo ",i)
+    i=i+1
+    
+    for rodada in jogos:
+        jogadas = rodada.split(',')                                             # Jogadas eh uma lista onde cada indice eh um numero e cor
+        print()        
+        
+        for turno in jogadas:
+            numeroCor = turno.split(' ')
+            print(numeroCor)
+            
+            if numeroCor[2] == 'red':
+                print("Tem vermelho")
+            if numeroCor[2] == 'green':
+                print("Tem verde")
+            if numeroCor[2] =='blue':
+                print("Tem azul")
+         
+        
+        
+    print('---------------------------')
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
 for linha in arq:
     eliminaInutil = linha.split(':')
 
@@ -50,43 +103,4 @@ for linha in arq:
     
         
         print()
-
-
-       
-        
-
-
-''''
-for linha in arq:
-    jogos = linha.split(':')
-
-    a = jogos[1].split(';')
-
-    for rodada in a:
-        b = rodada.split(',')
-
-        for c in b:
-            print(c)
-
-        for i, tentativa in enumerate(rodada):
-            print(rodada, tentativa)
-
-    for i, jogo in enumerate(separaJogos):
-        tentativa = jogo.split(',')
-        print(i, jogo)
-        print ()
-        
-        for cor in tentativa:
-            cor = cor.split()
-            print(cor)
-
-            if 'blue' in cor:
-                print('tem azul')
-            
-            if 'red' in cor:
-                print('tem vermelho')
-
-            if 'red' in cor:
-                print('tem vermelho')
-
 '''
